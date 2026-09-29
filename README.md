@@ -45,11 +45,12 @@ ParkingSpot/
 ## Team
 
 **Byte Bloom IT**
+### Team Responsibilities
 
-- Vinsika S B – Team Lead
-- Naveen S – Backend Developer
-- Praveen V – Database Developer
-- Veneka R S – Frontend Developer
+- **Project Architecture & Setup** — Naveen S
+- **Frontend Development** — Vinsika S B
+-**Backend Development** — Veneka R S
+- **Database Development** — Praveen V
 
 ## Project Workflow
 
@@ -61,3 +62,15 @@ Search Parking → Check Availability → Select Slot → Book → Get QR → Ve
 - Online payment integration
 - Automated parking gates
 - Advanced parking demand prediction
+## Project Architecture
+
+ParkingSpot follows a client-server architecture.
+
+```text
+User
+  ↓
+React Frontend
+  ↓
+Node.js + Express REST API
+  ↓
+MongoDB Database
