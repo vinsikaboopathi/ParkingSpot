@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const mongoose = require("mongoose");
 require("dotenv").config();
 
 const app = express();
@@ -7,24 +8,20 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Test route
 app.get("/", (req, res) => {
   res.json({
     message: "ParkingSpot Backend is running 🚗🅿️",
   });
 });
 
-// MongoDB connection
-const mongoose = require("mongoose");
-
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
     console.log("MongoDB connected successfully ✅");
   })
-  .catch((error) => {
+  .catch((err) => {
     console.log("MongoDB connection failed ❌");
-    console.log(error.message);
+    console.log(err.message);
   });
 
 const PORT = 5000;
